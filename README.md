@@ -10,7 +10,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
   <source media="(prefers-color-scheme: light)" srcset="light_mode.svg">
-  <img alt="Nadeem Shabir Mir: ASCII portrait and a neofetch-style card. AI/ML and backend engineer, IIT Bombay B.Tech 2023-2027. Python, PyTorch, RAG and agents, FastAPI, PostgreSQL, Docker." src="light_mode.svg">
+  <img alt="Nadeem Shabir Mir: ASCII portrait and a neofetch-style card. AI engineer, IIT Bombay B.Tech 2023-2027. Python, PyTorch, RAG and agents, FastAPI, PostgreSQL, Docker." src="light_mode.svg">
 </picture>
 
 <p align="center">
