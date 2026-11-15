@@ -2,9 +2,12 @@
 """Build the neofetch-style profile cards: dark_mode.svg and light_mode.svg.
 
 What the card says lives in profile.json. The ASCII portraits live in
-art/dark.txt and art/light.txt. GitHub numbers (repos, commits, followers,
-lines of code) are fetched live. Standard library only, so the
-GitHub Action needs nothing installed.
+art/dark.txt and art/light.txt. GitHub numbers (repos, followers, lines of
+code) are fetched live. Standard library only, so the GitHub Action needs
+nothing installed.
+
+Private repos: this repo and its Action logs are public, so private repo
+names are never written to cache/stats.json or printed. Only totals show.
 
     GH_TOKEN=... python scripts/build_card.py   # fetch stats, write both SVGs
     python scripts/build_card.py --offline      # no network: reuse cache/stats.json
@@ -13,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import calendar
+import hashlib
 import json
 import os
 import sys
@@ -118,21 +122,28 @@ def fetch_account(login: str, token: str | None, include_private: bool):
     return totals, [r["nameWithOwner"] for r in repos]
 
 
+def repo_key(name: str) -> str:
+    """Cache key for a repo: a hash, so private repo names never land in this public repo."""
+    return hashlib.sha256(name.lower().encode()).hexdigest()[:16]
+
+
 def fetch_code(names: list[str], login: str, token: str | None, cached: dict) -> dict:
-    """Commits and added/deleted lines by `login` on each repo's default branch.
+    """Lines added and deleted by `login` on each repo's default branch, by repo_key.
 
     GitHub computes these lazily and answers HTTP 202 until they are ready,
     so poll a few rounds. A repo that is still not ready keeps last run's numbers.
+    Logs give counts only, never repo names.
     """
     done: dict[str, dict] = {}
     pending = list(names)
+    failed = 0
     for attempt in range(6):
         waiting = []
         for name in pending:
             try:
                 status, data = call(f"{API}/repos/{name}/stats/contributors", token)
-            except urllib.error.HTTPError as err:
-                print(f"  {name}: HTTP {err.code}", file=sys.stderr)
+            except urllib.error.HTTPError:
+                failed += 1
                 continue
             if status == 202:
                 waiting.append(name)
@@ -141,18 +152,19 @@ def fetch_code(names: list[str], login: str, token: str | None, cached: dict) ->
                          if (p.get("author") or {}).get("login", "").lower() == login.lower()),
                         None)
             weeks = mine["weeks"] if mine else []
-            done[name] = {"commits": mine["total"] if mine else 0,
-                          "added": sum(w["a"] for w in weeks),
-                          "deleted": sum(w["d"] for w in weeks)}
+            done[repo_key(name)] = {"added": sum(w["a"] for w in weeks),
+                                    "deleted": sum(w["d"] for w in weeks)}
         pending = waiting
         if not pending:
             break
         time.sleep(3 + 3 * attempt)
-    if pending:
-        print("  still computing, used saved numbers: " + ", ".join(pending), file=sys.stderr)
+    if pending or failed:
+        print(f"  {len(pending)} repo(s) still computing, {failed} failed: used saved numbers.",
+              file=sys.stderr)
     for name in names:
-        if name not in done and name in cached:
-            done[name] = cached[name]
+        key = repo_key(name)
+        if key not in done and key in cached:
+            done[key] = cached[key]
     return done
 
 
@@ -175,11 +187,10 @@ def stats(cfg: dict, offline: bool) -> dict:
     if not account:
         sys.exit("No saved stats yet: run once with GH_TOKEN set.")
     # Repos that hold data dumps (CSV, notebook output) would swamp the line count.
-    skip = set(cfg.get("loc_exclude", []))
+    skip = {repo_key(n) for n in cfg.get("loc_exclude", [])}
     return {**account,
-            "commits": sum(r["commits"] for r in per_repo.values()),
-            "added": sum(r["added"] for n, r in per_repo.items() if n not in skip),
-            "deleted": sum(r["deleted"] for n, r in per_repo.items() if n not in skip)}
+            "added": sum(r["added"] for k, r in per_repo.items() if k not in skip),
+            "deleted": sum(r["deleted"] for k, r in per_repo.items() if k not in skip)}
 
 
 # ---------------------------------------------------------------- card text
@@ -226,7 +237,6 @@ def stats_rows(s: dict, width: int) -> list[Segs]:
     return [
         field("Repos", repos, STATS_LEFT) + [(" | ", None)]
         + field("Followers", [(num(s["followers"]), "value")], right, lead=""),
-        field("Commits", [(num(s["commits"]), "value")], width),
         field("Lines of Code", loc, width),
     ]
 

@@ -28,8 +28,8 @@ jobs:
 
       - name: Build the cards
         env:
-          # The default token sees public repos only. To count private repos too,
-          # add a read-only STATS_TOKEN secret and set include_private in profile.json.
+          # The default token sees public repos only. Add a read-only STATS_TOKEN
+          # secret to count private repos too (include_private is on in profile.json).
           GH_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
         run: python3 scripts/build_card.py
 

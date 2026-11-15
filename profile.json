@@ -4,7 +4,7 @@
   "width": 60,
   "uptime_since": "2023-12-25",
   "utc_offset_minutes": 330,
-  "include_private": false,
+  "include_private": true,
   "loc_exclude": ["nadeemshabir/genai_ml_-mini-projects"],
   "blocks": [
     {
