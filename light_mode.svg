@@ -31,5 +31,5 @@ text, tspan { white-space: pre; }
 <text x="438.0" y="476" fill="#24292f"><tspan class="cc">.</tspan></text>
 <text x="438.0" y="496" fill="#24292f"><tspan class="cc">- </tspan>GitHub Stats<tspan class="cc"> ─────────────────────────────────────────────</tspan></text>
 <text x="438.0" y="516" fill="#24292f"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">21</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">22</tspan>} | <tspan class="cc"></tspan><tspan class="key">Followers</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">9</tspan></text>
-<text x="438.0" y="536" fill="#24292f"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">143,247</tspan> ( <tspan class="add">179,044++</tspan>, <tspan class="rem">35,797--</tspan> )</text>
+<text x="438.0" y="536" fill="#24292f"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">143,247</tspan> ( <tspan class="add">179,048++</tspan>, <tspan class="rem">35,801--</tspan> )</text>
 </svg>
