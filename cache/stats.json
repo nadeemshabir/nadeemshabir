@@ -5,110 +5,89 @@
   "repos": 21
  },
  "repos": {
-  "nadeemshabir/AudioEnhancer": {
-   "added": 9220,
-   "commits": 3,
-   "deleted": 70
-  },
-  "nadeemshabir/Customer-Churn-Prediction": {
+  "08732afec9328dfe": {
    "added": 14072,
-   "commits": 10,
    "deleted": 5963
   },
-  "nadeemshabir/House-price-Prediction": {
+  "1d48c2941e5a13e4": {
+   "added": 7325,
+   "deleted": 0
+  },
+  "280a0d09fc2ea5d5": {
    "added": 0,
-   "commits": 0,
    "deleted": 0
   },
-  "nadeemshabir/House_Price-Prediction": {
-   "added": 34860,
-   "commits": 2,
-   "deleted": 0
+  "32dd03547fba3a9a": {
+   "added": 708,
+   "deleted": 21
   },
-  "nadeemshabir/Image-captioning": {
+  "474f3fd12d7609ae": {
    "added": 10110,
-   "commits": 1,
    "deleted": 0
   },
-  "nadeemshabir/Kashmiri-Authentic-Exports": {
-   "added": 4472,
-   "commits": 7,
-   "deleted": 77
-  },
-  "nadeemshabir/MindMail": {
-   "added": 19721,
-   "commits": 6,
-   "deleted": 1334
-  },
-  "nadeemshabir/ResearchGPT": {
-   "added": 49474,
-   "commits": 27,
-   "deleted": 25922
-  },
-  "nadeemshabir/auto-swe-agent": {
+  "579a827added2e79": {
    "added": 0,
-   "commits": 1,
    "deleted": 0
   },
-  "nadeemshabir/durable_campaign_dispatcher": {
-   "added": 0,
-   "commits": 0,
-   "deleted": 0
+  "6607edc5ace5a132": {
+   "added": 9220,
+   "deleted": 70
   },
-  "nadeemshabir/genai_ml_-mini-projects": {
-   "added": 9892409,
-   "commits": 5,
-   "deleted": 8
-  },
-  "nadeemshabir/github-repo-analyzer": {
-   "added": 378,
-   "commits": 4,
-   "deleted": 2
-  },
-  "nadeemshabir/mh-solutions-health": {
-   "added": 15545,
-   "commits": 17,
-   "deleted": 2176
-  },
-  "nadeemshabir/mir-nadeem-ai-folio": {
+  "6bfc505486549287": {
    "added": 11165,
-   "commits": 3,
    "deleted": 232
   },
-  "nadeemshabir/nadeemshabir": {
-   "added": 677,
-   "commits": 1,
-   "deleted": 0
-  },
-  "nadeemshabir/pipecat": {
+  "796484cf0d79158d": {
    "added": 0,
-   "commits": 0,
    "deleted": 0
   },
-  "nadeemshabir/python-tabulate": {
-   "added": 0,
-   "commits": 0,
-   "deleted": 0
-  },
-  "nadeemshabir/resume-screening-ats": {
-   "added": 7325,
-   "commits": 2,
-   "deleted": 0
-  },
-  "nadeemshabir/sde-assignment-junior-2026": {
-   "added": 0,
-   "commits": 0,
-   "deleted": 0
-  },
-  "nadeemshabir/toxic-comment-classifier": {
-   "added": 0,
-   "commits": 0,
-   "deleted": 0
-  },
-  "nadeemshabir/toxic_comment_classification": {
+  "79a2f5e16f762760": {
    "added": 1994,
-   "commits": 1,
    "deleted": 0
+  },
+  "7be0f22c9b3e94a1": {
+   "added": 0,
+   "deleted": 0
+  },
+  "82eb2ce03fb35ef0": {
+   "added": 0,
+   "deleted": 0
+  },
+  "94892adb5d65f2d9": {
+   "added": 19721,
+   "deleted": 1334
+  },
+  "a82550b89272c5d1": {
+   "added": 15545,
+   "deleted": 2176
+  },
+  "b0390aa5523d9c76": {
+   "added": 49474,
+   "deleted": 25922
+  },
+  "c038534c0aa714b4": {
+   "added": 0,
+   "deleted": 0
+  },
+  "dc02266647f246f3": {
+   "added": 4472,
+   "deleted": 77
+  },
+  "ddc867901abd7ed1": {
+   "added": 378,
+   "deleted": 2
+  },
+  "fa38c036624d2fbb": {
+   "added": 0,
+   "deleted": 0
+  },
+  "fb196ac454ed6e5a": {
+   "added": 34860,
+   "deleted": 0
+  },
+  "fd878632da58b0b2": {
+   "added": 9892409,
+   "deleted": 8
   }
  }
 }
