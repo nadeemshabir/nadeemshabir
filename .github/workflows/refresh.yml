@@ -1,0 +1,46 @@
+name: Refresh profile card
+
+on:
+  schedule:
+    - cron: "35 18 * * *"   # every day at 00:05 IST, so Uptime ticks over
+  workflow_dispatch:         # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - profile.json
+      - art/**
+      - scripts/**
+      - .github/workflows/refresh.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-card
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build the cards
+        env:
+          # The default token sees public repos only. To count private repos too,
+          # add a read-only STATS_TOKEN secret and set include_private in profile.json.
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
+        run: python3 scripts/build_card.py
+
+      - name: Commit the new cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dark_mode.svg light_mode.svg cache/stats.json
+          if git diff --cached --quiet; then
+            echo "Cards unchanged."
+            exit 0
+          fi
+          git commit -m "Refresh profile card"
+          git push || (git pull --rebase && git push)

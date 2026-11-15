@@ -1,0 +1,109 @@
+{
+ "account": {
+  "contributed": 21,
+  "followers": 9,
+  "repos": 20
+ },
+ "repos": {
+  "nadeemshabir/AudioEnhancer": {
+   "added": 9220,
+   "commits": 3,
+   "deleted": 70
+  },
+  "nadeemshabir/Customer-Churn-Prediction": {
+   "added": 14072,
+   "commits": 10,
+   "deleted": 5963
+  },
+  "nadeemshabir/House-price-Prediction": {
+   "added": 0,
+   "commits": 0,
+   "deleted": 0
+  },
+  "nadeemshabir/House_Price-Prediction": {
+   "added": 34860,
+   "commits": 2,
+   "deleted": 0
+  },
+  "nadeemshabir/Image-captioning": {
+   "added": 10110,
+   "commits": 1,
+   "deleted": 0
+  },
+  "nadeemshabir/Kashmiri-Authentic-Exports": {
+   "added": 4472,
+   "commits": 7,
+   "deleted": 77
+  },
+  "nadeemshabir/MindMail": {
+   "added": 19721,
+   "commits": 6,
+   "deleted": 1334
+  },
+  "nadeemshabir/ResearchGPT": {
+   "added": 49474,
+   "commits": 27,
+   "deleted": 25922
+  },
+  "nadeemshabir/auto-swe-agent": {
+   "added": 0,
+   "commits": 1,
+   "deleted": 0
+  },
+  "nadeemshabir/durable_campaign_dispatcher": {
+   "added": 0,
+   "commits": 0,
+   "deleted": 0
+  },
+  "nadeemshabir/genai_ml_-mini-projects": {
+   "added": 9892409,
+   "commits": 5,
+   "deleted": 8
+  },
+  "nadeemshabir/github-repo-analyzer": {
+   "added": 378,
+   "commits": 4,
+   "deleted": 2
+  },
+  "nadeemshabir/mh-solutions-health": {
+   "added": 15545,
+   "commits": 17,
+   "deleted": 2176
+  },
+  "nadeemshabir/mir-nadeem-ai-folio": {
+   "added": 11165,
+   "commits": 3,
+   "deleted": 232
+  },
+  "nadeemshabir/pipecat": {
+   "added": 0,
+   "commits": 0,
+   "deleted": 0
+  },
+  "nadeemshabir/python-tabulate": {
+   "added": 0,
+   "commits": 0,
+   "deleted": 0
+  },
+  "nadeemshabir/resume-screening-ats": {
+   "added": 7325,
+   "commits": 2,
+   "deleted": 0
+  },
+  "nadeemshabir/sde-assignment-junior-2026": {
+   "added": 0,
+   "commits": 0,
+   "deleted": 0
+  },
+  "nadeemshabir/toxic-comment-classifier": {
+   "added": 0,
+   "commits": 0,
+   "deleted": 0
+  },
+  "nadeemshabir/toxic_comment_classification": {
+   "added": 1994,
+   "commits": 1,
+   "deleted": 0
+  }
+ }
+}

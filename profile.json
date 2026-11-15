@@ -1,0 +1,49 @@
+{
+  "login": "nadeemshabir",
+  "header": "nadeem@mir",
+  "width": 60,
+  "uptime_since": "2023-12-25",
+  "utc_offset_minutes": 330,
+  "include_private": false,
+  "loc_exclude": ["nadeemshabir/genai_ml_-mini-projects"],
+  "blocks": [
+    {
+      "rows": [
+        ["OS", "Windows 11, Linux"],
+        ["Uptime", "{uptime}"],
+        ["Host", "IIT Bombay, B.Tech 2023-2027"],
+        ["Kernel", "AI/ML & Backend Engineer"],
+        ["IDE", "VS Code 1.146.0, Cursor"]
+      ]
+    },
+    {
+      "rows": [
+        ["Languages.Programming", "Python, C++, SQL"],
+        ["Stack.ML", "PyTorch, Transformers, LoRA/QLoRA"],
+        ["Stack.LLM", "RAG, ReAct Agents, Multi-Agent"],
+        ["Stack.Backend", "FastAPI, Celery, Redis, PostgreSQL"],
+        ["Stack.Cloud", "Docker, Azure VM, Cloud Run, CI/CD"]
+      ]
+    },
+    {
+      "title": "Experience (2026)",
+      "rows": [
+        ["Alimento Agro Foods", "Agentic AI Engineer Intern"],
+        ["BharatRix", "AI Engineer Intern"],
+        ["Quansys AI", "Data Engineering Intern"],
+        ["Key Project", "Autonomous SWE Agent"]
+      ]
+    },
+    {
+      "title": "Contact",
+      "rows": [
+        ["Email", "mirnadeem2021@gmail.com"],
+        ["Website", "nadeemshabir.live"]
+      ]
+    },
+    {
+      "title": "GitHub Stats",
+      "stats": true
+    }
+  ]
+}
